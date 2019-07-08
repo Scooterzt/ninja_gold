@@ -1,0 +1,22 @@
+*{
+    margin: 2px;
+    padding: 0;
+}
+.wall{
+    background-image: linear-gradient(white, grey);
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.findgold{
+    background-image: linear-gradient(white, pink);
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    vertical-align: top;
+}
+.activ{
+    background-color: burlywood;
+    height: 100px;
+    margin-top: 10px;
+}

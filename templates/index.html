@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<title>Ninja Gold</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+    </head>
+    <body>
+        <div class="wall">
+            <h1>Your Gold: {{session["your_gold"]}}</h1>
+            <form method="post" action="/reset" >
+                <input type="submit" name="reset" value="reset Your game">
+            </form>
+            <div class="findgold">
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <form method ="post" action="/process_money">
+                    <input type="hidden" name="location" value = "farm">
+                    <input type="submit" name="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="findgold">
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <form method ="post" action="/process_money">
+                    <input type="hidden" name="location" value = "cave">
+                    <input type="submit" name="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="findgold">
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <form method ="post" action="/process_money">
+                    <input type="hidden" name="location" value = "house">
+                    <input type="submit" name="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="findgold">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <form method ="post" action="/process_money">
+                    <input type="hidden" name="location" value = "casino">
+                    <input type="submit" name="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="activ">
+                <p> You got {{session["gold"]}} from {{session["location"]}} </p>
+            </div>
+        </div>
+    </body>
+</html>
